@@ -1,0 +1,23 @@
+<mat-label>Crear Cuentas contables</mat-label>
+<hr>
+<form class="example-form">
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion</mat-label>
+                <input matInput [(ngModel)]="account.descripcion" name="description" placeholder="Descripcion de la cuenta">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-slide-toggle [checked]="account.naturaleza" [(ngModel)]="account.naturaleza" name="nature">{{account.naturaleza? "Debito": "Credito"}}</mat-slide-toggle>
+        </mat-grid-tile>
+        
+
+        
+    </mat-grid-list>
+
+
+        
+    <button mat-raised-button type="submit" (click)="createAccount()">Crear</button>
+</form>

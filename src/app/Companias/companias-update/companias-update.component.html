@@ -1,0 +1,29 @@
+<mat-label>Editar una Compañia</mat-label>
+<hr>
+<form class="example-form">
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Compañia</mat-label>
+                <input matInput  name="compania" placeholder="Nombre de la compañia"  [(ngModel)]="compania.nombre">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput name="montocompania"
+                    placeholder="Monto de la compañia" type="number" [(ngModel)]="compania.ingresoTotal">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+            </mat-form-field>
+        </mat-grid-tile>
+
+
+
+    </mat-grid-list>
+    
+        <button mat-raised-button  (click)="updateCompania(compania.id)">Actualizar</button>
+            
+</form>
+

@@ -1,0 +1,28 @@
+<mat-label>Agregar una Compañia</mat-label>
+<hr>
+<form class="example-form">
+    <mat-grid-list cols="2" rowHeight="6:1">
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Compañia</mat-label>
+                <input matInput [(ngModel)]="compania.nombre" name="compania" placeholder="Nombre de la compañia">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput [(ngModel)]="compania.ingresoTotal" name="montocompania" placeholder="Monto de la compañia" type="number">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+            </mat-form-field>
+        </mat-grid-tile>
+
+
+
+    </mat-grid-list>
+
+
+
+    <button mat-raised-button type="submit" (click)="agregarCompania()">Agregar</button>
+</form>

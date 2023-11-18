@@ -1,0 +1,55 @@
+<mat-label>Crear Transaccion</mat-label>
+<hr>
+<form class="example-form">
+    <mat-grid-list cols="2" rowHeight="8:1">
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>TransaccionID</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let Transaccion of Transaccion" [value]="Transaccion"> {{Transaccion}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput placeholder="Nombre de la Transaccion">
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput type="number" placeholder="0">
+                <span matTextPrefix>$&nbsp;</span>
+                <span matTextSuffix>.00</span>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Contabilidad</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let contabilidad of contabilidad" [value]="contabilidad"> {{contabilidad}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Compañia</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let compania of compania" [value]="compania"> {{compania}} </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripcion</mat-label>
+                <input matInput placeholder="Descripcion">
+            </mat-form-field>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+
+    <button mat-raised-button type="submit">Actualizar Transaccion</button>
+</form>

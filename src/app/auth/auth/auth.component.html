@@ -1,0 +1,22 @@
+<body>
+    <div class="CajaLogin">
+        <form>
+            <h2>Inicia Sesion</h2>
+            <mat-form-field class="Logeo">
+                <input matInput type="text"  [(ngModel)]="username" name="username" required="">
+                <mat-label>Usuario</mat-label>
+            </mat-form-field>
+
+            <mat-form-field class="Logeo">
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password">
+                <mat-label>Contraseña</mat-label>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <a class="forgot" href="#">¿Olvidaste la Contraseña?</a>
+            <button type="submit" class="btn" (click)="login()" >Iniciar Sesion</button>
+        </form>
+    </div>
+</body>

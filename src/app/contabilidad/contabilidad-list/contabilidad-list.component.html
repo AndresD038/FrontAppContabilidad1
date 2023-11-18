@@ -1,0 +1,48 @@
+<mat-label>Listar Cuentas contables</mat-label>
+<hr>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Description Column -->
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+      <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+    </ng-container>
+  
+    <!-- Naturaleza Column -->
+    <ng-container matColumnDef="naturaleza">
+      <th mat-header-cell *matHeaderCellDef> Naturaleza </th>
+      <td mat-cell *matCellDef="let element"> {{element.naturaleza? "Debito": "Credito"}} </td>
+    </ng-container>
+  
+    <!-- Delete Column -->
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+        <td mat-cell *matCellDef="let element"> 
+            <button mat-fab color="warn" aria-label="Delete" (click)="eliminarCuentaContable(element)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+  
+        <!-- Edit Column -->
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element"> 
+                <button mat-fab color="primary" aria-label="Edit">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
